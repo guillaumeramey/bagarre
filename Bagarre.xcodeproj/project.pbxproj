@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A419C4002158E4D20023AB53 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419C3FF2158E4D20023AB53 /* main.swift */; };
+		A419C4092158E5180023AB53 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419C4082158E5180023AB53 /* Character.swift */; };
+		A419C40B2158E5510023AB53 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419C40A2158E5510023AB53 /* Weapon.swift */; };
+		A419C40D2158E9C60023AB53 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419C40C2158E9C60023AB53 /* functions.swift */; };
+		A419C411215A976D0023AB53 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419C410215A976D0023AB53 /* Team.swift */; };
+		A419C413215ACFDB0023AB53 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419C412215ACFDB0023AB53 /* constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +30,11 @@
 /* Begin PBXFileReference section */
 		A419C3FC2158E4D20023AB53 /* Bagarre */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Bagarre; sourceTree = BUILT_PRODUCTS_DIR; };
 		A419C3FF2158E4D20023AB53 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		A419C4082158E5180023AB53 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		A419C40A2158E5510023AB53 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		A419C40C2158E9C60023AB53 /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
+		A419C410215A976D0023AB53 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		A419C412215ACFDB0023AB53 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,11 @@
 			isa = PBXGroup;
 			children = (
 				A419C3FF2158E4D20023AB53 /* main.swift */,
+				A419C40C2158E9C60023AB53 /* functions.swift */,
+				A419C4082158E5180023AB53 /* Character.swift */,
+				A419C410215A976D0023AB53 /* Team.swift */,
+				A419C40A2158E5510023AB53 /* Weapon.swift */,
+				A419C412215ACFDB0023AB53 /* constants.swift */,
 			);
 			path = Bagarre;
 			sourceTree = "<group>";
@@ -120,6 +135,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A419C4002158E4D20023AB53 /* main.swift in Sources */,
+				A419C4092158E5180023AB53 /* Character.swift in Sources */,
+				A419C40B2158E5510023AB53 /* Weapon.swift in Sources */,
+				A419C411215A976D0023AB53 /* Team.swift in Sources */,
+				A419C40D2158E9C60023AB53 /* functions.swift in Sources */,
+				A419C413215ACFDB0023AB53 /* constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

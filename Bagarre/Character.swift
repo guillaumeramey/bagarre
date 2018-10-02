@@ -52,6 +52,7 @@ class Character {
             strength = colosseStrength
             dodge = colosseDodge
             weapon = Weapon("Masse simple", power: weaponPower)
+            actionList.insert("Protéger", at: 0)
         case .mage:
             typeIcon = mageTypeIcon
             maxHealth = mageMaxHealth
@@ -147,10 +148,10 @@ class Character {
                     selectIndex = choice - 1
                     selectOk = true
                 default:
-                    print("Faire un choix entre 1 et \(index) ", terminator:"")
+                    print("Faire un choix entre 1 et \(index) : ", terminator:"")
                 }
             } else {
-                print("Faire un choix entre 1 et \(index) ", terminator:"")
+                print("Faire un choix entre 1 et \(index) : ", terminator:"")
             }
         }
         

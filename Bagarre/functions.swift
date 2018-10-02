@@ -5,7 +5,7 @@
 func selectTeamSize() -> Int {
     var numberOfCharacters = 0
     
-    print("Combien de personnages par équipe ?")
+    print("Combien de personnages par équipe ? ", terminator:"")
     while numberOfCharacters == 0 {
         if let choice = Int(readLine()!) {
             numberOfCharacters = choice
@@ -45,7 +45,7 @@ func createTeam(_ teamNumber: Int, _ name: String, _ teamSize: Int) -> Team {
             case "4":
                 team.addCharacter(Character(selectCharacterName(), .nain))
             default:
-                print("Faire un choix entre 1 et 4")
+                print("Faire un choix entre 1 et 4 : ", terminator:"")
             }
         }
     }
@@ -63,12 +63,12 @@ var teamNameList: [String] = [] // contains the names of all teams to avoid dupl
 func selectTeamName() -> String {
     var teamName = ""
     
-    print("\nChoisissez un nom pour votre équipe :")
+    print("\nChoisissez un nom pour votre équipe : ", terminator:"")
     
     while teamName == "" {
         if let name = readLine() {
             if teamNameList.contains(name.uppercased()) {
-                print("Nom déjà pris ! Choisissez-en un autre :")
+                print("Nom déjà pris ! Choisissez-en un autre : ", terminator:"")
             } else {
                 teamNameList.append(name.uppercased())
                 teamName = name
@@ -89,12 +89,12 @@ var characterNameList: [String] = [] // contains the names of all characters to 
 func selectCharacterName() -> String {
     var characterName = ""
     
-    print("Choisissez un nom pour votre personnage :")
+    print("Choisissez un nom pour votre personnage : ", terminator:"")
     
     while characterName == "" {
         if let name = readLine() {
             if characterNameList.contains(name.uppercased()) {
-                print("Nom déjà pris ! Choisissez-en un autre :")
+                print("Nom déjà pris ! Choisissez-en un autre : ", terminator:"")
             } else {
                 characterNameList.append(name.uppercased())
                 characterName = name
@@ -125,7 +125,7 @@ func selectGameMode() -> String {
             case "2":
                 gameMode = "Bonus"
             default:
-                print("Faire un choix entre 1 et 2")
+                print("Faire un choix entre 1 et 2 : ", terminator:"")
             }
         }
     }

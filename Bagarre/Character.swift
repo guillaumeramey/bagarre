@@ -41,30 +41,29 @@ class Character {
         self.type = type
         switch type {
         case .combattant:
-            typeIcon = "🗡"
-            maxHealth = 100
-            strength = 2
-            dodge = 25
+            typeIcon = combattantTypeIcon
+            maxHealth = combattantMaxHealth
+            strength = combattantStrength
+            dodge = combattantDodge
             weapon = Weapon("Epée simple", power: weaponPower)
         case .colosse:
-            typeIcon = "🛡"
-            maxHealth = 200
-            strength = 1
-            dodge = 15
+            typeIcon = colosseTypeIcon
+            maxHealth = colosseMaxHealth
+            strength = colosseStrength
+            dodge = colosseDodge
             weapon = Weapon("Masse simple", power: weaponPower)
-            actionList.insert("Protéger", at: 0)
         case .mage:
-            typeIcon = "🧙🏻‍♀️"
-            maxHealth = 100
-            strength = 3
-            dodge = 15
+            typeIcon = mageTypeIcon
+            maxHealth = mageMaxHealth
+            strength = mageStrength
+            dodge = mageDodge
             weapon = Weapon("Dague simple", spirit: weaponPower)
             actionList.insert("Soigner", at: 0)
         case .nain:
-            typeIcon = "⛏"
-            maxHealth = 80
-            strength = 3
-            dodge = 15
+            typeIcon = nainTypeIcon
+            maxHealth = nainMaxHealth
+            strength = nainStrength
+            dodge = nainDodge
             weapon = Weapon("Hache simple", power: weaponPower)
         }
         health = maxHealth
@@ -148,10 +147,10 @@ class Character {
                     selectIndex = choice - 1
                     selectOk = true
                 default:
-                    print("Faire un choix entre 1 et \(index)")
+                    print("Faire un choix entre 1 et \(index) ", terminator:"")
                 }
             } else {
-                print("Faire un choix entre 1 et \(index)")
+                print("Faire un choix entre 1 et \(index) ", terminator:"")
             }
         }
         
@@ -178,7 +177,7 @@ class Character {
         
         // asks the player if he wants to equip the new weapon
         print("\n🎁 " + name + " ouvre le coffre et obtient... " + weaponName + " / Puissance : \(powerNewWeapon) !!")
-        print("   Equiper la nouvelle arme (O/N)? (Equipé : " + weapon.name + " / Puissance : \(powerOldWeapon))")
+        print("   Equiper la nouvelle arme (O/N)? (Equipé : " + weapon.name + " / Puissance : \(powerOldWeapon)) ", terminator:"")
         
         var selectOk = false
         
@@ -195,10 +194,10 @@ class Character {
                 case "N":
                     selectOk = true
                 default:
-                    print("Faire un choix entre O et N")
+                    print("Faire un choix entre O et N : ", terminator:"")
                 }
             } else {
-                print("Faire un choix entre O et N")
+                print("Faire un choix entre O et N : ", terminator:"")
             }
         }
     }

@@ -71,16 +71,16 @@ class Team {
                         if characters[selectIndex].hasPlayed == false || target {
                             selectOk = true
                         } else {
-                            print("Ce personnage a déjà joué dans ce tour ! Faites un autre choix :")
+                            print("Ce personnage a déjà joué dans ce tour ! Faites un autre choix : ", terminator:"")
                         }
                     } else {
-                        print("Ce personnage est mort ! Faites un autre choix :")
+                        print("Ce personnage est mort ! Faites un autre choix : ", terminator:"")
                     }
                 default:
-                    print("Choix impossible ! Faire un choix entre 1 et \(index)")
+                    print("Choix impossible ! Faire un choix entre 1 et \(index) : ", terminator:"")
                 }
             } else {
-                print("Choix impossible ! Faire un choix entre 1 et \(index)")
+                print("Choix impossible ! Faire un choix entre 1 et \(index) : ", terminator:"")
             }
         }
         

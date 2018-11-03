@@ -12,7 +12,7 @@ struct Constants {
     // Characters
     struct Combattant {
         static let maxHealth = 100
-        static let startWeaponPower = 10
+        static let startWeaponPower = 1000
         static let action = "Attaquer"
     }
     

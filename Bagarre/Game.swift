@@ -3,7 +3,8 @@ class Game {
     private var characterNameList: [String] = [] // contains the names of all characters to avoid duplicates
     private var numberOfTurns = 0
     private var teams = [Team]() // contains the players teams
-    private var activeTeamIndex = 0 // current team turn
+    private var activeTeamIndex = 0 // current team index turn
+    private var activeTeam: Team! // current team turn
     
     // starts the game
     func start() {
@@ -11,7 +12,7 @@ class Game {
         createTeams()
         
         // Random team will begin
-        let startingTeamIndex = Int.random(in: 0 ..< teams.count)
+        let startingTeamIndex = Int.random(in: 0 ..< Constants.numberOfTeams)
         
         print("\nL'équipe " + teams[startingTeamIndex].name + " a gagné le tirage au sort et démarre la partie !")
         activeTeamIndex = startingTeamIndex
@@ -19,18 +20,20 @@ class Game {
         // Game loops until one team dies
         while numberOfteamsAlive(in: teams) > 1 {
             
+            activeTeam = teams[activeTeamIndex]
+            
             // add a turn when all teams have played
             if activeTeamIndex == startingTeamIndex {
                 numberOfTurns += 1
             }
             
-            if teams[activeTeamIndex].livingCharacters() > 0 {
-                print("\n******************** Tour n°\(numberOfTurns) | Equipe " + teams[activeTeamIndex].name + " ********************")
-                play(activeTeam: teams[activeTeamIndex])
+            if activeTeam.livingCharacters() > 0 {
+                print("\n******************** Tour n°\(numberOfTurns) | Equipe " + activeTeam.name + " ********************")
+                play()
             }
             
             // change the active team
-            if activeTeamIndex == teams.count - 1 {
+            if activeTeamIndex == Constants.numberOfTeams - 1 {
                 activeTeamIndex = 0
             } else {
                 activeTeamIndex += 1
@@ -113,7 +116,7 @@ class Game {
     }
 
     // player turn
-    private func play(activeTeam: Team) {
+    private func play() {
         
         // player chooses a character to play
         print("\nChoisissez le personnage qui va agir :")
@@ -162,9 +165,13 @@ class Game {
     // select a team
     private func selectTeam() -> Team {
         
-        // a character cannot attack his own team
-        var targetTeams = teams
-        targetTeams.remove(at: activeTeamIndex)
+        // creates a list of living targets only
+        var targetTeams = [Team]()
+        for team in teams {
+            if team !== activeTeam && team.livingCharacters() > 0 {
+                targetTeams.append(team)
+            }
+        }
     
         // The player chooses a team if there's more than 2
         if targetTeams.count == 1 {
@@ -176,8 +183,7 @@ class Game {
             // displays useful informations on teams
             for team in targetTeams {
                 index += 1
-                print("\(index). Equipe : " + team.name + " :")
-                // displays useful info on characters in the team
+                print("\(index). Equipe : " + team.name)
                 var charactersInfo = ""
                 for character in team.characters {
                     if charactersInfo != "" {
@@ -192,11 +198,7 @@ class Game {
                 if let choice = Int(readLine()!) {
                     switch choice {
                     case 1 ... index:
-                        if targetTeams[choice - 1].livingCharacters() > 0 {
                             return targetTeams[choice - 1]
-                        } else {
-                            print("Aucun personnage vivant dans cette équipe !")
-                        }
                     default:
                         break
                     }

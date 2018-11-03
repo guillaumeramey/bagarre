@@ -1,10 +1,8 @@
 class Team {
-    let teamNumber: Int // the number of the team
     let name: String // the name of the team
     var characters = [Character]() // the characters in the team
     
-    init(_ teamNumber: Int, _ name: String) {
-        self.teamNumber = teamNumber
+    init(name: String) {
         self.name = name
     }
     
@@ -13,77 +11,41 @@ class Team {
         characters.append(character)
     }
     
-    // returns the number of characters in the team
-    func count() -> Int {
-        return characters.count
-    }
-    
-    // returns the number of living characters in the team
+    // returns the numbers of characters alive
     func livingCharacters() -> Int {
-        var livingCharacters = 0
+        var count = 0
         for character in characters {
-            livingCharacters += character.isAlive ? 1 : 0
+            if character.isAlive {
+                count += 1
+            }
         }
-        return livingCharacters
+        return count
     }
-    
-    // returns true if at least one character is alive in the team
-    func isAlive() -> Bool {
-        return livingCharacters() > 0 ? true : false
-    }
-    
-    // BONUS : resets the hasPlayed state for players
-    func resetPlayerState() {
-        for character in characters {
-            character.hasPlayed = false
-        }
-    }
-    
-    // select a character in the team
-    func selectCharacter(target: Bool) -> Character {
+
+    // asks the user to select a character in the team
+    func selectCharacter() -> Character {
         var index = 0
-        var selectOk = false
-        var selectIndex = 0
-        var characterInfo: String // displays useful info - different if target or not
         
+        // displays useful info on characters
         for character in characters {
             index += 1
-            characterInfo = "\(index). "
-            if target {
-                characterInfo += character.isAlive ? "" : character.stateIcon + " "
-                characterInfo += character.isProtected ? "(🛡)" : ""
-                characterInfo += " " + character.name + " " + character.typeIcon + " / PV : \(character.health)/\(character.maxHealth)"
-            } else {
-                characterInfo += character.stateIcon + " "
-                characterInfo += character.isProtected ? "(🛡)" : ""
-                characterInfo +=  " " + character.name + " " + character.typeIcon + " / PV : \(character.health)/\(character.maxHealth) / Actions : " + character.actionList.joined(separator: ", ")
-            }
-            
-            print(characterInfo)
+            print("\(index). " + character.icon + " " + character.name + " / PV : \(character.health)/\(character.maxHealth)")
         }
-        
-        while selectOk == false {
+
+        while true {
             if let choice = Int(readLine()!) {
                 switch choice {
                 case 1 ... index:
-                    selectIndex = choice - 1
-                    if characters[selectIndex].isAlive {
-                        if characters[selectIndex].hasPlayed == false || target {
-                            selectOk = true
-                        } else {
-                            print("Ce personnage a déjà joué dans ce tour ! Faites un autre choix : ", terminator:"")
-                        }
+                    if characters[choice - 1].isAlive {
+                        return characters[choice - 1]
                     } else {
-                        print("Ce personnage est mort ! Faites un autre choix : ", terminator:"")
+                        print("Ce personnage est mort !")
                     }
                 default:
-                    print("Choix impossible ! Faire un choix entre 1 et \(index) : ", terminator:"")
+                    break
                 }
-            } else {
-                print("Choix impossible ! Faire un choix entre 1 et \(index) : ", terminator:"")
             }
+            print("Faites un choix entre 1 et \(index) : ", terminator:"")
         }
-        
-        return characters[selectIndex]
     }
 }

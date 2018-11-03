@@ -10,9 +10,13 @@
 		A419C4002158E4D20023AB53 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419C3FF2158E4D20023AB53 /* main.swift */; };
 		A419C4092158E5180023AB53 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419C4082158E5180023AB53 /* Character.swift */; };
 		A419C40B2158E5510023AB53 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419C40A2158E5510023AB53 /* Weapon.swift */; };
-		A419C40D2158E9C60023AB53 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419C40C2158E9C60023AB53 /* functions.swift */; };
+		A419C40D2158E9C60023AB53 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419C40C2158E9C60023AB53 /* Game.swift */; };
 		A419C411215A976D0023AB53 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419C410215A976D0023AB53 /* Team.swift */; };
-		A419C413215ACFDB0023AB53 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419C412215ACFDB0023AB53 /* constants.swift */; };
+		A419C413215ACFDB0023AB53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419C412215ACFDB0023AB53 /* Constants.swift */; };
+		A49DF948218C537900C9DFB6 /* Combattant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49DF947218C537900C9DFB6 /* Combattant.swift */; };
+		A49DF94A218C54E500C9DFB6 /* Mage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49DF949218C54E500C9DFB6 /* Mage.swift */; };
+		A49DF94C218C579B00C9DFB6 /* Colosse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49DF94B218C579B00C9DFB6 /* Colosse.swift */; };
+		A49DF94E218C57A800C9DFB6 /* Nain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49DF94D218C57A800C9DFB6 /* Nain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,9 +36,13 @@
 		A419C3FF2158E4D20023AB53 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		A419C4082158E5180023AB53 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		A419C40A2158E5510023AB53 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
-		A419C40C2158E9C60023AB53 /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
+		A419C40C2158E9C60023AB53 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		A419C410215A976D0023AB53 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
-		A419C412215ACFDB0023AB53 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		A419C412215ACFDB0023AB53 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A49DF947218C537900C9DFB6 /* Combattant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combattant.swift; sourceTree = "<group>"; };
+		A49DF949218C54E500C9DFB6 /* Mage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mage.swift; sourceTree = "<group>"; };
+		A49DF94B218C579B00C9DFB6 /* Colosse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colosse.swift; sourceTree = "<group>"; };
+		A49DF94D218C57A800C9DFB6 /* Nain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,11 +76,15 @@
 			isa = PBXGroup;
 			children = (
 				A419C3FF2158E4D20023AB53 /* main.swift */,
-				A419C40C2158E9C60023AB53 /* functions.swift */,
-				A419C4082158E5180023AB53 /* Character.swift */,
-				A419C410215A976D0023AB53 /* Team.swift */,
+				A419C40C2158E9C60023AB53 /* Game.swift */,
+				A419C412215ACFDB0023AB53 /* Constants.swift */,
 				A419C40A2158E5510023AB53 /* Weapon.swift */,
-				A419C412215ACFDB0023AB53 /* constants.swift */,
+				A419C4082158E5180023AB53 /* Character.swift */,
+				A49DF94B218C579B00C9DFB6 /* Colosse.swift */,
+				A49DF94D218C57A800C9DFB6 /* Nain.swift */,
+				A49DF947218C537900C9DFB6 /* Combattant.swift */,
+				A49DF949218C54E500C9DFB6 /* Mage.swift */,
+				A419C410215A976D0023AB53 /* Team.swift */,
 			);
 			path = Bagarre;
 			sourceTree = "<group>";
@@ -138,8 +150,12 @@
 				A419C4092158E5180023AB53 /* Character.swift in Sources */,
 				A419C40B2158E5510023AB53 /* Weapon.swift in Sources */,
 				A419C411215A976D0023AB53 /* Team.swift in Sources */,
-				A419C40D2158E9C60023AB53 /* functions.swift in Sources */,
-				A419C413215ACFDB0023AB53 /* constants.swift in Sources */,
+				A419C40D2158E9C60023AB53 /* Game.swift in Sources */,
+				A419C413215ACFDB0023AB53 /* Constants.swift in Sources */,
+				A49DF948218C537900C9DFB6 /* Combattant.swift in Sources */,
+				A49DF94C218C579B00C9DFB6 /* Colosse.swift in Sources */,
+				A49DF94A218C54E500C9DFB6 /* Mage.swift in Sources */,
+				A49DF94E218C57A800C9DFB6 /* Nain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

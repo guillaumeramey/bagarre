@@ -1,30 +1,37 @@
-let healthPotion = 30
-let chanceForChest = 33
-
-let weaponPower = 10
-//let weaponPower = 30
-
-// start statistics
-// combattant
-let combattantTypeIcon = "🗡"
-let combattantMaxHealth = 100
-let combattantStrength = 2
-let combattantDodge = 25
-
-// colosse
-let colosseTypeIcon = "🛡"
-let colosseMaxHealth = 200
-let colosseStrength = 1
-let colosseDodge = 15
-
-// mage
-let mageTypeIcon = "🧙🏻‍♀️"
-let mageMaxHealth = 100
-let mageStrength = 3
-let mageDodge = 15
-
-// nain
-let nainTypeIcon = "⛏"
-let nainMaxHealth = 80
-let nainStrength = 3
-let nainDodge = 15
+struct Constants {
+    
+    // Chance for a chest to appear
+    static let chanceOfChest = 50
+    
+    // Number of teams
+    static let numberOfTeams = 3
+    
+    // Number of characters in a team
+    static let charactersInTeam = 2
+    
+    // Characters
+    struct Combattant {
+        static let maxHealth = 100
+        static let startWeaponPower = 10
+        static let action = "Attaquer"
+    }
+    
+    struct Colosse {
+        static let maxHealth = 150
+        static let startWeaponPower = 5
+        static let action = "Attaquer"
+    }
+    
+    struct Mage {
+        static let maxHealth = 100
+        static let startWeaponPower = 15
+        static let action = "Soigner"
+    }
+    
+    struct Nain {
+        static let maxHealth = 50
+        static let startWeaponPower = 15
+        static let action = "Attaquer"
+    }
+    
+}
